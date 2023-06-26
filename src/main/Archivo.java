@@ -160,7 +160,18 @@ public class Archivo {
 
                     //Segun el tipo de celda, usaremos uno u otra funcion
                     switch (celda.getCellType()) {
-                        case Cell.CELL_TYPE_NUMERIC -> System.out.println(String.format("%.0f", (double)celda.getNumericCellValue()));
+                        case Cell.CELL_TYPE_NUMERIC -> {
+                            double x = celda.getNumericCellValue();
+                            if (x < 100000){
+                                Date javaDate= DateUtil.getJavaDate((double) x);
+                                System.out.println(new SimpleDateFormat("MM/dd/yyyy").format(javaDate));
+                                
+                            } else {
+                                System.out.println(String.format("%.0f", (double)celda.getNumericCellValue()));
+
+                            }
+                            
+                        }
                         case Cell.CELL_TYPE_STRING -> System.out.println(celda.getStringCellValue());
                         
                     }
@@ -209,7 +220,18 @@ public class Archivo {
 
                     //Segun el tipo de celda, usaremos uno u otra funcion
                     switch (celda.getCellType()) {
-                        case Cell.CELL_TYPE_NUMERIC -> System.out.println(String.format("%.0f", (double)celda.getNumericCellValue()));
+                        case Cell.CELL_TYPE_NUMERIC -> {
+                            double x = celda.getNumericCellValue();
+                            if (x < 100000){
+                                Date javaDate= DateUtil.getJavaDate((double) x);
+                                System.out.println(new SimpleDateFormat("MM/dd/yyyy").format(javaDate));
+                                
+                            } else {
+                                System.out.println(String.format("%.0f", (double)celda.getNumericCellValue()));
+
+                            }
+                            
+                        }
                         case Cell.CELL_TYPE_STRING -> System.out.println(celda.getStringCellValue());
                     }
 
