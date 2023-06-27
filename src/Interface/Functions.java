@@ -3,7 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Interface;
-
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import main.Archivo;
 /**
  *
  * @author Luis Gustavo

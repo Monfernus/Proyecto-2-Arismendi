@@ -30,7 +30,6 @@ public class Welcome extends javax.swing.JFrame {
 
         hotel = new javax.swing.JLabel();
         welcome = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
@@ -44,14 +43,8 @@ public class Welcome extends javax.swing.JFrame {
         getContentPane().add(hotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 290, 30));
 
         welcome.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 24)); // NOI18N
-        welcome.setText("HOTEL ARISMENDI");
-        getContentPane().add(welcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, 30));
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Realizado por Luis Arismendi.");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 170, -1));
+        welcome.setText("HOTEL UNIMET");
+        getContentPane().add(welcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, 30));
 
         jButton1.setText("Siguente");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -59,7 +52,7 @@ public class Welcome extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 130, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 130, 30));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pngtree-light-blue-background-gradient-abstract-background-halo-image_758338.jpg"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 400));
@@ -113,7 +106,6 @@ public class Welcome extends javax.swing.JFrame {
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel hotel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables
 }

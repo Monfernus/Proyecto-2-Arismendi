@@ -4,7 +4,6 @@
  */
 package main;
 import Interface.Functions;
-import main.Archivo;
 
 /**
  *
@@ -19,6 +18,13 @@ public class main {
         // TODO code application logic here
         Functions f = new Functions();
         f.Welcome();
+        
+        Archivo ar = new Archivo();
+        ar.Reservas();
+        //ar.Estado();
+        //ar.Habitaciones();
+        //ar.Historico();
+        
     }
     
     
