@@ -6,17 +6,15 @@ package Interface;
 
 /**
  *
- * @author Luis Gustavo
+ * @author gabri
  */
 public class Menu extends javax.swing.JFrame {
 
     /**
-     * Creates new form Welcome
+     * Creates new form menu
      */
     public Menu() {
         initComponents();
-        this.pack();
-        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -28,92 +26,21 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Regist = new javax.swing.JButton();
-        Busq = new javax.swing.JButton();
-        Hist = new javax.swing.JButton();
-        CheckIn = new javax.swing.JButton();
-        CheckOut = new javax.swing.JButton();
-        Fondo = new javax.swing.JLabel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Regist.setText("Registro de clientes");
-        Regist.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Regist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Regist, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 180, 60));
-
-        Busq.setText("Busqueda de reservacion");
-        Busq.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Busq.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BusqActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Busq, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, 180, 60));
-
-        Hist.setText("Historial de habitacion");
-        Hist.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Hist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HistActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Hist, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 180, 60));
-
-        CheckIn.setText("Check-In");
-        CheckIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CheckIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckInActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CheckIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 180, 60));
-
-        CheckOut.setText("Check-Out");
-        CheckOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CheckOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckOutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 180, 60));
-
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pngtree-light-blue-background-gradient-abstract-background-halo-image_758338.jpg"))); // NOI18N
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 400));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void HistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistActionPerformed
-        Functions f = new Functions();
-        f.HistorialHabitacion();
-    }//GEN-LAST:event_HistActionPerformed
-
-    private void RegistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistActionPerformed
-        Functions f = new Functions();
-        f.HistorialHabitacion();
-    }//GEN-LAST:event_RegistActionPerformed
-
-    private void BusqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusqActionPerformed
-        Functions f = new Functions();
-        f.BusquedaReservacion();
-    }//GEN-LAST:event_BusqActionPerformed
-
-    private void CheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckOutActionPerformed
-        Functions f = new Functions();
-        f.CheckOut();
-    }//GEN-LAST:event_CheckOutActionPerformed
-
-    private void CheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckInActionPerformed
-        Functions f = new Functions();
-        f.CheckOut();
-    }//GEN-LAST:event_CheckInActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,11 +79,5 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Busq;
-    private javax.swing.JButton CheckIn;
-    private javax.swing.JButton CheckOut;
-    private javax.swing.JLabel Fondo;
-    private javax.swing.JButton Hist;
-    private javax.swing.JButton Regist;
     // End of variables declaration//GEN-END:variables
 }
