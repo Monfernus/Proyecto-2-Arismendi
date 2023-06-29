@@ -1,8 +1,10 @@
+package EDD;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-import clases.Cliente.Cliente;
+import Clases.Cliente;
 /**
  *
  * @author Edgar Torres
@@ -12,8 +14,10 @@ import clases.Cliente.Cliente;
 
 
 public class Arboldebusqueda {
+
+    private final Object root;
     
-    public  arboldebusqueda {
+    public Arboldebusqueda() {
         this.root = null;
     }
 

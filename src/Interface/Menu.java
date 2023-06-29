@@ -4,18 +4,31 @@
  */
 package Interface;
 
+
+import EDD.ArbolBinario;
+import EDD.Hashtable;
+import EDD.ListaSimple;
+
+
 /**
  *
  * @author gabri
  */
 public class Menu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form menu
-     */
+    
     public Menu() {
         initComponents();
+        this.pack();
+        this.setLocationRelativeTo(null);
     }
+    
+    public static ListaSimple lista_reservacion= new ListaSimple();
+    public static ArbolBinario historial_habitacion = new ArbolBinario();
+    public static Functions fc = new Functions();
+    public static Hashtable table = new Hashtable();
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,21 +39,132 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        Registro = new javax.swing.JButton();
+        Historial = new javax.swing.JButton();
+        reservacion = new javax.swing.JButton();
+        Check_Out = new javax.swing.JButton();
+        Check_In = new javax.swing.JButton();
+        Search1 = new javax.swing.JButton();
+        Cargar_txt = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Eras Demi ITC", 1, 36)); // NOI18N
+        jLabel1.setText("Menu Principal");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 380, 50));
+
+        Registro.setText("Registro de clientes");
+        Registro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistroActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 190, 60));
+
+        Historial.setText("Historial de Habitacion");
+        Historial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HistorialActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Historial, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 190, 60));
+
+        reservacion.setText("Reservacion");
+        reservacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reservacionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(reservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 190, 60));
+
+        Check_Out.setText("Check-Out");
+        Check_Out.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Check_OutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Check_Out, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 190, 60));
+
+        Check_In.setText("Check-in");
+        Check_In.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Check_InActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Check_In, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 190, 60));
+
+        Search1.setText("Busqueda de reservaciones");
+        Search1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Search1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Search1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 190, 60));
+
+        Cargar_txt.setText("Cargar txt");
+        Cargar_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cargar_txtActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Cargar_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 190, 60));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pngtree-light-blue-background-gradient-abstract-background-halo-image_758338.jpg"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegistroActionPerformed
+
+    private void HistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistorialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HistorialActionPerformed
+
+    private void reservacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservacionActionPerformed
+        Reservaciones v3 = new Reservaciones(this);
+        v3.setVisible(true);
+    }//GEN-LAST:event_reservacionActionPerformed
+
+    private void Check_OutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Check_OutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Check_OutActionPerformed
+
+    private void Check_InActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Check_InActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Check_InActionPerformed
+
+    private void Search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Search1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Search1ActionPerformed
+
+    private void Cargar_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cargar_txtActionPerformed
+        fc.Leer_Estado(table);
+//        String nombre = "Olva";
+//        String segundo_nombre = "Close" ;
+//        String email = "oclose83@scientificamerican.com";
+//        String genero = "Female";
+//        String telf = "(596) 4346980";
+//        
+//        Cliente cliente1 = new Cliente(nombre,segundo_nombre, email, genero, telf);
+//        int num_hab = 292;
+//        String fecha_llegada = "01/07/2023";
+//        Estado estado = new Estado(num_hab,cliente1,fecha_llegada);
+//        System.out.println(table.isInHashIndex(estado));
+        
+    }//GEN-LAST:event_Cargar_txtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -69,6 +193,8 @@ public class Menu extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -79,5 +205,15 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cargar_txt;
+    private javax.swing.JButton Check_In;
+    private javax.swing.JButton Check_Out;
+    private javax.swing.JButton Historial;
+    private javax.swing.JButton Registro;
+    private javax.swing.JButton Search1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton reservacion;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,7 +30,7 @@ public class Welcome extends javax.swing.JFrame {
 
         hotel = new javax.swing.JLabel();
         welcome = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        next = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,13 +46,13 @@ public class Welcome extends javax.swing.JFrame {
         welcome.setText("HOTEL UNIMET");
         getContentPane().add(welcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, 30));
 
-        jButton1.setText("Siguente");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        next.setText("Siguente");
+        next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                nextActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 130, 30));
+        getContentPane().add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 130, 30));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pngtree-light-blue-background-gradient-abstract-background-halo-image_758338.jpg"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 400));
@@ -60,12 +60,12 @@ public class Welcome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         Functions f = new Functions();
         f.Menu();
         this.dispose();
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_nextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -105,7 +105,7 @@ public class Welcome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel hotel;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton next;
     private javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables
 }

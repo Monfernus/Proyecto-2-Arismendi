@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.*;
 
+
 /**
  *
  * @author Luis Gustavo
@@ -19,7 +20,7 @@ public class Archivo {
     
 
     public void Reservas() {
-        String file = "src//file//reservas.csv";
+        String file = "src//reservas.csv";
         BufferedReader reader = null;
         String line = "";
 
@@ -41,7 +42,7 @@ public class Archivo {
         }
         finally {
             try {
-                reader.close();
+                    reader.close();
             } catch (IOException ex) {
                 Logger.getLogger(Archivo.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -50,7 +51,7 @@ public class Archivo {
     
     
     public void Habitaciones() {
-        String file = "src//file//habitaciones.csv";
+        String file = "src//reservas.csv";
         BufferedReader reader = null;
         String line = "";
 
@@ -81,7 +82,7 @@ public class Archivo {
     }
     
     public void Estado() {
-         String file = "src//file//estado.csv";
+         String file = "src//reservas.csv";
         BufferedReader reader = null;
         String line = "";
 
@@ -112,7 +113,7 @@ public class Archivo {
     }
     
     public void Historico() {
-        String file = "src//file//histórico.csv";
+        String file = "src//reservas.csv";
         BufferedReader reader = null;
         String line = "";
 

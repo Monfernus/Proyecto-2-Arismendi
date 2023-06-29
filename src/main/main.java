@@ -20,7 +20,7 @@ public class main {
         f.Welcome();
         
         Archivo ar = new Archivo();
-        ar.Reservas();
+        //ar.Reservas();
         //ar.Estado();
         //ar.Habitaciones();
         //ar.Historico();

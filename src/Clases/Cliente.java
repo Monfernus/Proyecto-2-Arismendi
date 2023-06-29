@@ -16,14 +16,18 @@ public class Cliente {
     private String genero;
     private String cedula;
     private String telf;
+    private String entrada;
+    private String salida;
 
-    public Cliente(String nombre, String segundo_nombre, String email, String genero, String cedula, String telf) {
+    public Cliente(String cedula, String nombre, String segundo_nombre, String email, String genero, String telf, String entrada, String salida) {
+        this.cedula = cedula;
         this.nombre = nombre;
         this.segundo_nombre = segundo_nombre;
         this.email = email;
         this.genero = genero;
-        this.cedula = cedula;
         this.telf = telf;
+        this.entrada = entrada;
+        this.salida = salida;
     }
     
     public Cliente(String nombre, String segundo_nombre, String email, String genero, String telf) {
@@ -33,6 +37,22 @@ public class Cliente {
         this.genero = genero;
         this.cedula = null;
         this.telf = telf;
+    }
+
+    public String getEntrada() {
+        return entrada;
+    }
+
+    public void setEntrada(String entrada) {
+        this.entrada = entrada;
+    }
+
+    public String getSalida() {
+        return salida;
+    }
+
+    public void setSalida(String salida) {
+        this.salida = salida;
     }
 
     public String getNombre() {
@@ -83,10 +103,10 @@ public class Cliente {
         this.telf = telf;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "nombre:" + nombre + "\nsegundo_nombre:" + segundo_nombre + "\nemail:" + email + "\ngenero:" + genero + "\ncedula:" + cedula + "\ntelf:" + telf + '\n';
-    }
+    }*/
     
     
 }
