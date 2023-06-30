@@ -25,11 +25,11 @@ import javax.swing.JOptionPane;
 public class Functions {
     Welcome welcome = new Welcome();
     Menu menu = new Menu();
-    BusquedaReservacion busq = new BusquedaReservacion();
+    Busqueda_reser busq = new Busqueda_reser();
     CheckIn ckI = new CheckIn();
-    CheckOut ckO = new CheckOut();
-    HistorialHabitacion hist = new HistorialHabitacion();
-    RegistroClientes regist = new RegistroClientes();
+    Check_Out ckO = new Check_Out();
+    Historial hist = new Historial();
+    Registro_clientes regist = new Registro_clientes();
     private helpers help = new helpers();
 
     
