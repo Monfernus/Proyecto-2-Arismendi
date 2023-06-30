@@ -6,7 +6,7 @@ package EDD;
 
 /**
  *
- * @author Moises Loita
+ * @author gabri
  */
 public class helpers {
     

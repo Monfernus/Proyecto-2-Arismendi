@@ -6,7 +6,7 @@ package Clases;
 
 /**
  *
- * @author Moises Loita
+ * @author gabri
  */
 public class Estado {
     private int num_hab;

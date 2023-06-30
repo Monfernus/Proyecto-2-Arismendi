@@ -27,9 +27,9 @@ public class Arboldebusqueda {
     
     
     public void insertar() {
-        NodoArbol node = new NodoArbol();
+        NodoAB node = new NodoAB();
         if (isEmpty()) {
-            setRoot(node);
+            setNodoRaiz(node);
         } else {
             int day= Integer.parseInt(Cliente.getentrada().substring(0, 0)); 
             int mounth = Integer.parseInt(Cliente.getLlegada().substring(0, 0));
