@@ -43,7 +43,7 @@ public class Estado {
         this.llegada = llegada;
     }
     
-    // Arregla el to String para que imprima bonito
+    
     @Override
     public String toString() {
         return  "num_hab=" + num_hab + ", cliente=" + cliente + ", llegada=" + llegada + '\n';

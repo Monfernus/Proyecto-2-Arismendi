@@ -6,7 +6,7 @@ package Funciones;
 
 /**
  *
- * @author Moises Loita
+ * @author Edgar Torres
  */
 public class helpers {
     

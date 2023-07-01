@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Moises Loita
+ * @author Edgard Torres
  */
 public class Funciones {
     

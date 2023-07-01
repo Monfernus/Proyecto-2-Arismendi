@@ -14,20 +14,16 @@ public class Cliente {
     private String segundo_nombre;
     private String email;
     private String genero;
-    private String cedula;
+    private int cedula;
     private String telf;
-    private String entrada;
-    private String salida;
 
-    public Cliente(String cedula, String nombre, String segundo_nombre, String email, String genero, String telf, String entrada, String salida) {
-        this.cedula = cedula;
+    public Cliente(String nombre, String segundo_nombre, String email, String genero, int cedula, String telf) {
         this.nombre = nombre;
         this.segundo_nombre = segundo_nombre;
         this.email = email;
         this.genero = genero;
+        this.cedula = cedula;
         this.telf = telf;
-        this.entrada = entrada;
-        this.salida = salida;
     }
     
     public Cliente(String nombre, String segundo_nombre, String email, String genero, String telf) {
@@ -35,24 +31,17 @@ public class Cliente {
         this.segundo_nombre = segundo_nombre;
         this.email = email;
         this.genero = genero;
-        this.cedula = null;
+        this.cedula = 0;
         this.telf = telf;
     }
-
-    public String getEntrada() {
-        return entrada;
-    }
-
-    public void setEntrada(String entrada) {
-        this.entrada = entrada;
-    }
-
-    public String getSalida() {
-        return salida;
-    }
-
-    public void setSalida(String salida) {
-        this.salida = salida;
+    
+    public Cliente(String nombre, String segundo_nombre) {
+        this.nombre = nombre;
+        this.segundo_nombre = segundo_nombre;
+        this.email = null;
+        this.genero = null;
+        this.cedula = 0;
+        this.telf = null;
     }
 
     public String getNombre() {
@@ -87,11 +76,11 @@ public class Cliente {
         this.genero = genero;
     }
 
-    public String getCedula() {
+    public int getCedula() {
         return cedula;
     }
 
-    public void setCedula(String cedula) {
+    public void setCedula(int cedula) {
         this.cedula = cedula;
     }
 
@@ -103,10 +92,10 @@ public class Cliente {
         this.telf = telf;
     }
 
-    /*@Override
+    @Override
     public String toString() {
         return "nombre:" + nombre + "\nsegundo_nombre:" + segundo_nombre + "\nemail:" + email + "\ngenero:" + genero + "\ncedula:" + cedula + "\ntelf:" + telf + '\n';
-    }*/
+    }
     
     
 }
