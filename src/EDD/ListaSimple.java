@@ -11,12 +11,17 @@ import javax.swing.JOptionPane;
  * @author gabri
  */
 public class ListaSimple {
-    private Nodo pFirst; //nodo apuntador al primero
+   private Nodo pFirst; //nodo apuntador al primero
     private int size; //tamaño de la lista
     
     //Constructor de la clase Lista
     public ListaSimple() {
         this.pFirst = null;
+        this.size = 0; 
+    }
+    public ListaSimple(Object cliente) {
+        Nodo node = new Nodo(cliente);
+        this.pFirst = node;
         this.size = 0; 
     }
     

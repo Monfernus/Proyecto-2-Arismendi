@@ -4,6 +4,7 @@
  */
 package EDD;
 
+import Clases.Cliente;
 import Clases.Estado;
 import javax.swing.JOptionPane;
 
@@ -84,6 +85,26 @@ public class Hashtable {
         }
         
         return -1;
+    }
+    
+    public int isInHashIndexN(Cliente cliente){
+        for (int i = 0; i < this.getEstado().length; i++) {
+            if (getEstado()[i] != null){
+                if (getEstado()[i].getCliente().getNombre().equalsIgnoreCase(cliente.getNombre()) && getEstado()[i].getCliente().getSegundo_nombre().equalsIgnoreCase(cliente.getSegundo_nombre())){
+                    return i;
+                }
+            }
+        }
+        
+        return -1;
+    }
+    
+    public void Disponibles(ListaSimple hab_disp){
+        for (int i = 1; i < this.getEstado().length; i++) {
+            if (getEstado()[i] == null){
+                hab_disp.insertarAlFinal(i);
+            }
+        }
     }
     
 }

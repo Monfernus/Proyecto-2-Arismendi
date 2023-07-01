@@ -9,27 +9,16 @@ package EDD;
  * @author gabri
  */
 public class NodoAB {
-     private Object dato;
+     private int num_hab;
+    private ListaSimple clientes;
     private NodoAB HijoIzq;
     private NodoAB HijoDer;
     private NodoAB father;
 
-    public NodoAB(Object dato) {
-        this.dato = dato;
+    public NodoAB(int num_hab, ListaSimple cliente) {
+        this.num_hab = num_hab;
+        this.clientes = cliente;
         this.HijoDer = this.HijoIzq = this.father = null;
-    }
-    
-    public NodoAB() {
-        this.dato = null;
-        this.HijoDer = this.HijoIzq = this.father = null;
-    }
-
-    public Object getDato() {
-        return dato;
-    }
-
-    public void setDato(Object dato) {
-        this.dato = dato;
     }
 
     public NodoAB getHijoIzq() {
@@ -54,6 +43,22 @@ public class NodoAB {
 
     public void setFather(NodoAB father) {
         this.father = father;
+    }
+
+    public int getNum_hab() {
+        return num_hab;
+    }
+
+    public void setNum_hab(int num_hab) {
+        this.num_hab = num_hab;
+    }
+
+    public ListaSimple getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(ListaSimple Clientes) {
+        this.clientes = Clientes;
     }
     
 }
