@@ -16,16 +16,13 @@ public class main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
         Welcome ventana = new Welcome();
         ventana.setVisible(true);
         
-        Archivo ar = new Archivo();
-        //ar.Reservas();
-        //ar.Estado();
-        //ar.Habitaciones();
-        //ar.Historico();
-        
+      
     }
     
+ }
     
-}
+    
