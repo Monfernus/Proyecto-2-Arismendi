@@ -4,6 +4,12 @@
  */
 package Interface;
 
+import EDD.ArbolBinario;
+import EDD.Hashtable;
+import EDD.ListaSimple;
+import EDD.Precargar;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Luis Gustavo
@@ -13,8 +19,14 @@ public class Welcome extends javax.swing.JFrame {
     /**
      * Creates new form Welcome
      */
+    public static Hashtable table = new Hashtable();
+    public static ListaSimple lista_reservacion= new ListaSimple();
+    public static ListaSimple lista_habitacion= new ListaSimple();
+    public static ArbolBinario historial_habitacion = new ArbolBinario();
+    
     public Welcome() {
         initComponents();
+        this.setVisible(true);
         this.pack();
         this.setLocationRelativeTo(null);
     }
@@ -61,10 +73,16 @@ public class Welcome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
-        Functions f = new Functions();
-        f.Menu();
-        this.dispose();
-
+        Precargar fc_precargar = new Precargar();
+        fc_precargar.Leer_Estado(table);
+        fc_precargar.Leer_reservas(lista_reservacion);
+        fc_precargar.Leer_habitaciones(lista_habitacion);
+        JOptionPane.showMessageDialog(null,"Espere...");
+        JOptionPane.showMessageDialog(null,"Datos Cargados.");
+        
+        Menu v2 = new Menu(this);
+        v2.setVisible(true);
+       
     }//GEN-LAST:event_nextActionPerformed
 
     /**

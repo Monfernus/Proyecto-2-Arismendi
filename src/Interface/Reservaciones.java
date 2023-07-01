@@ -5,6 +5,7 @@
 package Interface;
 
 
+import static Interface.RegistroClientes.v2;
 import javax.swing.JOptionPane;
 
 public class Reservaciones extends javax.swing.JFrame {
@@ -131,7 +132,7 @@ public class Reservaciones extends javax.swing.JFrame {
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
         this.setVisible(false);
-        Menu ventana1 = new Menu();
+        Menu ventana1 = new Menu(v2);
         ventana1.setVisible(true);
     }//GEN-LAST:event_VolverActionPerformed
 

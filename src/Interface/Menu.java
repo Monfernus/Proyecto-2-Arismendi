@@ -8,6 +8,7 @@ package Interface;
 import EDD.ArbolBinario;
 import EDD.Hashtable;
 import EDD.ListaSimple;
+import static Interface.Welcome.table;
 
 
 /**
@@ -16,20 +17,20 @@ import EDD.ListaSimple;
  */
 public class Menu extends javax.swing.JFrame {
 
+    public static Welcome v1;
+
     
-    public Menu() {
+    public Menu(Welcome v1) {
         initComponents();
         this.pack();
         this.setLocationRelativeTo(null);
+        this.v1 = v1;
+        v1.setVisible(false);
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
     
-    public static ListaSimple lista_reservacion= new ListaSimple();
-    public static ArbolBinario historial_habitacion = new ArbolBinario();
-    public static Functions fc = new Functions();
-    public static Hashtable table = new Hashtable();
-    
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,8 +47,7 @@ public class Menu extends javax.swing.JFrame {
         reservacion = new javax.swing.JButton();
         Check_Out = new javax.swing.JButton();
         Check_In = new javax.swing.JButton();
-        Search1 = new javax.swing.JButton();
-        Cargar_txt = new javax.swing.JButton();
+        Busqueda = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,21 +101,13 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(Check_In, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 190, 60));
 
-        Search1.setText("Busqueda de reservaciones");
-        Search1.addActionListener(new java.awt.event.ActionListener() {
+        Busqueda.setText("Busqueda de reservaciones");
+        Busqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Search1ActionPerformed(evt);
+                BusquedaActionPerformed(evt);
             }
         });
-        jPanel1.add(Search1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 190, 60));
-
-        Cargar_txt.setText("Cargar txt");
-        Cargar_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cargar_txtActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Cargar_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 190, 60));
+        jPanel1.add(Busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 190, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pngtree-light-blue-background-gradient-abstract-background-halo-image_758338.jpg"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
@@ -127,10 +119,13 @@ public class Menu extends javax.swing.JFrame {
 
     private void RegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroActionPerformed
         // TODO add your handling code here:
+        RegistroClientes v2 = new RegistroClientes(this, v1);
+        v2.setVisible(true);    
     }//GEN-LAST:event_RegistroActionPerformed
 
     private void HistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistorialActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_HistorialActionPerformed
 
     private void reservacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservacionActionPerformed
@@ -140,31 +135,22 @@ public class Menu extends javax.swing.JFrame {
 
     private void Check_OutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Check_OutActionPerformed
         // TODO add your handling code here:
+        CheckOut v4 = new CheckOut(this, v1);
+        v4.setVisible(true);
+        
     }//GEN-LAST:event_Check_OutActionPerformed
 
     private void Check_InActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Check_InActionPerformed
         // TODO add your handling code here:
+        CheckIn v5 = new CheckIn(this, v1);
+        v5.setVisible(true);
+      
     }//GEN-LAST:event_Check_InActionPerformed
 
-    private void Search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Search1ActionPerformed
+    private void BusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Search1ActionPerformed
-
-    private void Cargar_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cargar_txtActionPerformed
-        fc.Leer_Estado(table);
-//        String nombre = "Olva";
-//        String segundo_nombre = "Close" ;
-//        String email = "oclose83@scientificamerican.com";
-//        String genero = "Female";
-//        String telf = "(596) 4346980";
-//        
-//        Cliente cliente1 = new Cliente(nombre,segundo_nombre, email, genero, telf);
-//        int num_hab = 292;
-//        String fecha_llegada = "01/07/2023";
-//        Estado estado = new Estado(num_hab,cliente1,fecha_llegada);
-//        System.out.println(table.isInHashIndex(estado));
         
-    }//GEN-LAST:event_Cargar_txtActionPerformed
+    }//GEN-LAST:event_BusquedaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,18 +185,17 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new Menu(v1).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cargar_txt;
+    private javax.swing.JButton Busqueda;
     private javax.swing.JButton Check_In;
     private javax.swing.JButton Check_Out;
     private javax.swing.JButton Historial;
     private javax.swing.JButton Registro;
-    private javax.swing.JButton Search1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

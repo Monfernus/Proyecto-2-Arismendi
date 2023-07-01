@@ -4,6 +4,8 @@
  */
 package Interface;
 
+import static Interface.CheckIn.v2;
+
 /**
  *
  * @author Luis Gustavo
@@ -13,10 +15,20 @@ public class CheckOut extends javax.swing.JFrame {
     /**
      * Creates new form Welcome
      */
-    public CheckOut() {
+    
+    public static Menu v1;
+    public static Welcome v2;
+    
+    public CheckOut(Menu v1, Welcome v2) {
         initComponents();
         this.pack();
         this.setLocationRelativeTo(null);
+        this.v1 = v1;
+        this.v2 = v2;
+        v1.setVisible(false);
+        v2.setVisible(false);
+        this.setVisible(true);
+        this.setResizable(false);
     }
 
     /**
@@ -50,9 +62,9 @@ public class CheckOut extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-        Functions f = new Functions();
-        this.dispose();
-        f.Volver();
+        this.setVisible(false);
+        Menu ventana1 = new Menu(v2);
+        ventana1.setVisible(true);
     }//GEN-LAST:event_VolverActionPerformed
 
     /**
@@ -88,7 +100,7 @@ public class CheckOut extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CheckOut().setVisible(true);
+                new CheckOut(v1,v2).setVisible(true);
             }
         });
     }

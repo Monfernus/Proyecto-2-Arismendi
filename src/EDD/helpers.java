@@ -54,10 +54,43 @@ public class helpers {
     }
     
     public String Validartelf(String telf){
+            String cell = telf.replaceAll(" ", "");
+        if (cell.charAt(0) == '(') {
+            if (cell.charAt(4) == ')') {
+                String cell_uno = cell.replace('(', '0');
+                String cell_dos = cell_uno.replace(')', '0');
+                if (validarnumeros(cell_dos) == true) {
+                    return telf;
+                } else {
+                    return null;
+                }
+            } else {
+                return null;
+            }
+        } else {
             return null;
+        }
     }
     
-    public String ValidarEmail(){
-        return null;
+    public String ValidarEmail(String email){
+        int count = 0;
+        for (int i = 0; i < email.length(); i++) {
+            if(email.charAt(i) == '@'){
+                count++;
+            }
+        }
+        if(count == 1){
+            return email;
+        }else{
+            return null;
+        }
+    }
+    
+    public String Validar_TipoHab(String tipo_hab){
+        if(tipo_hab.equalsIgnoreCase("simple") || tipo_hab.equalsIgnoreCase("doble") || tipo_hab.equalsIgnoreCase("triple") || tipo_hab.equalsIgnoreCase("suite")){
+            return tipo_hab;
+        }else{
+              return null;
+        }
     }
 }

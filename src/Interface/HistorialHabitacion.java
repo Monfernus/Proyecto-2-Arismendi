@@ -4,6 +4,8 @@
  */
 package Interface;
 
+import static Interface.RegistroClientes.v2;
+
 /**
  *
  * @author Luis Gustavo
@@ -50,9 +52,9 @@ public class HistorialHabitacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-        Functions f = new Functions();
-        this.dispose();
-        f.Volver();
+        this.setVisible(false);
+        Menu ventana1 = new Menu(v2);
+        ventana1.setVisible(true);
     }//GEN-LAST:event_VolverActionPerformed
 
     /**

@@ -6,11 +6,14 @@ package Interface;
 
 import Clases.Cliente;
 import Clases.Estado;
+import Clases.Habitacion;
 import Clases.Reservacion;
 import EDD.Hashtable;
 import EDD.ListaSimple;
 import EDD.Nodo;
 import EDD.helpers;
+import static Interface.Menu.v1;
+import static Interface.RegistroClientes.v2;
 import java.awt.HeadlessException;
 import java.io.BufferedReader;
 import java.io.File;
@@ -23,89 +26,9 @@ import javax.swing.JOptionPane;
  * @author Luis Gustavo
  */
 public class Functions {
-    Welcome welcome = new Welcome();
-    Menu menu = new Menu();
-    BusquedaReservacion busq = new BusquedaReservacion();
-    CheckIn ckI = new CheckIn();
-    CheckOut ckO = new CheckOut();
-    HistorialHabitacion hist = new HistorialHabitacion();
-    RegistroClientes regist = new RegistroClientes();
     private helpers help = new helpers();
 
-    
-    public void Welcome(){
-        welcome.setVisible(true); 
-    }
-    
-    public void Menu(){
-        menu.setVisible(true);
-    }
-    
-    public void Menu2(){
-        menu.setVisible(true);
-    }
-    
-    public void BusquedaReservacion(){
-        busq.setVisible(true);
-    }
-    
-    public void CheckIn(){
-        ckI.setVisible(true);
-    }
-    
-    public void CheckOut(){
-        ckO.setVisible(true);
-    }
-    
-    public void HistorialHabitacion(){
-        hist.setVisible(true);
-    }
-    
-    public void RegistroClientes(){
-        regist.setVisible(true);
-    }
-    
-    public void Volver(){
-        busq.setVisible(false);
-        ckI.setVisible(false);
-        ckO.setVisible(false);
-        hist.setVisible(false);
-        regist.setVisible(false);
-    }
-    
-    //funcion para buscar a la persona en el registro del hotel
-    private void Busca_Hospedado(){
-        
-    }
-    
-    //funcion para buscar el numero de reservacion del cliente 
-    public void Buscar_Reservacion(){
-        
-    }
-    
-    //funcion que dado un numero de habitacion nos buscara en el arbol binario el historial de la habitacion
-    public void Historial_Habitacion(){
-        
-    }
-    
-    //funcion para registrar el huesped
-    public void Check_in(){
-            
-    }
-    //funcion para sacar hacer check out del huesped
-    public void Check_Out(){
-        
-    }
-        
-    //funcion para leer archivo TXT
-    public void Leer_reservas(){  
-    }
-    public void Leer_habitaciones(){  
-    }
-    
-    public void Leer_historico(){  
-    }
-    
+
     public void Leer_Estado(Hashtable table){
         String line;
         String expresion_txt = "";
@@ -177,18 +100,73 @@ public class Functions {
             JOptionPane.showMessageDialog(null, "cargado");
         }
     }
-
     
-
-    public static class Precargar {
-
-        public Precargar() {
+    public String BuscarPorCedula(ListaSimple list, int ci) {
+        Nodo aux = list.getpFirst();
+        for (int i = 0; i < list.getSize(); i++) {
+            Reservacion reserva1 = (Reservacion) list.getValor(i);
+            Cliente cliente1 = reserva1.getCliente();
+            if (cliente1.getCedula() == ci) {
+                return reserva1.toString();
+            }
+            aux.getPnext();
+        }
+        return null;
+    }
+    
+    public Reservacion Reservacion1(ListaSimple list, int ci) {
+        Nodo aux = list.getpFirst();
+        for (int i = 0; i < list.getSize(); i++) {
+            Reservacion reserva1 = (Reservacion) list.getValor(i);
+            Cliente cliente1 = reserva1.getCliente();
+            if (cliente1.getCedula() == ci) {
+                return reserva1;
+            }
+            aux.getPnext();
+        }
+        return null;
+    }
+    
+    public int IndexReservacion(ListaSimple list, int ci) {
+        Nodo aux = list.getpFirst();
+        for (int i = 0; i < list.getSize(); i++) {
+            Reservacion reserva1 = (Reservacion) list.getValor(i);
+            Cliente cliente1 = reserva1.getCliente();
+            if (cliente1.getCedula() == ci) {
+                return i;
+            }
+            aux.getPnext();
+        }
+        return -1;
+    }
+    
+    public void Empezar_Estadia(ListaSimple reservaciones, int ci, ListaSimple habitaciones, Hashtable table){
+        if(BuscarPorCedula(reservaciones, ci) != null){
+            int count = 0;
+            Reservacion reserva = Reservacion1(reservaciones, ci);
+            ListaSimple hab_disp = new ListaSimple();
+            table.Disponibles(hab_disp);
+            for (int i = 0; i < hab_disp.getSize(); i++) {
+                int num_hab = (int) hab_disp.getValor(i);
+                Habitacion hab = (Habitacion) habitaciones.getValor(num_hab-1);
+                
+                if(hab.getTipo_hab().equalsIgnoreCase(reserva.getTipo_hab())){
+                    Estado estado = new Estado(hab.getNum_hab(), reserva.getCliente(), reserva.getFecha_llegada());
+                    table.insertEstado(estado);
+                    reservaciones.EliminarPorPosicion(IndexReservacion(reservaciones, ci));
+                    count++;
+                    break;
+                }
+            }
+            
+            if(count > 0){
+                JOptionPane.showMessageDialog(null, "El cliente empezo su estadia.");
+            }else{
+                JOptionPane.showMessageDialog(null, "No hay habitacion disponible para el cliente.");
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "El cliente no ha reservado, reserve para poder empezar su estadia.");
         }
     }
 
-    public static class Funciones {
-
-        public Funciones() {
-        }
-    }
 }

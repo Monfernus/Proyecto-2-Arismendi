@@ -8,15 +8,34 @@ package Interface;
  *
  * @author Luis Gustavo
  */
+
+import Interface.Functions;
+import EDD.helpers;
+import static Interface.Welcome.lista_habitacion;
+import static Interface.Welcome.lista_reservacion;
+import static Interface.Welcome.table;
+import static Interface.RegistroClientes.v2;
+import javax.swing.JOptionPane;
+
 public class CheckIn extends javax.swing.JFrame {
 
     /**
      * Creates new form Welcome
      */
-    public CheckIn() {
+    
+    public static Menu v1;
+    public static Welcome v2;
+    
+    public CheckIn(Menu v1, Welcome v2) {
         initComponents();
         this.pack();
+        this.v1 = v1;
+        this.v2 = v2;
+        v1.setVisible(false);
+        v2.setVisible(false);
+        this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
@@ -50,9 +69,9 @@ public class CheckIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-        Functions f = new Functions();
-        this.dispose();
-        f.Volver();
+       this.setVisible(false);
+        Menu ventana1 = new Menu(v2);
+        ventana1.setVisible(true);
     }//GEN-LAST:event_VolverActionPerformed
 
     /**
@@ -88,7 +107,7 @@ public class CheckIn extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CheckIn().setVisible(true);
+                new CheckIn(v1,v2).setVisible(true);
             }
         });
     }

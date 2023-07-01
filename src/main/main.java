@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package main;
-import Interface.Functions;
+import Interface.Welcome;
 
 /**
  *
@@ -16,8 +16,8 @@ public class main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Functions f = new Functions();
-        f.Welcome();
+        Welcome ventana = new Welcome();
+        ventana.setVisible(true);
         
         Archivo ar = new Archivo();
         //ar.Reservas();

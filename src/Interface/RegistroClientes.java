@@ -4,6 +4,10 @@
  */
 package Interface;
 
+import Clases.Cliente;
+import static Interface.Welcome.table;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Luis Gustavo
@@ -13,11 +17,22 @@ public class RegistroClientes extends javax.swing.JFrame {
     /**
      * Creates new form Welcome
      */
-    public RegistroClientes() {
+    
+    public static Menu v1;
+    public static Welcome v2;
+    
+    public RegistroClientes(Menu v1, Welcome v2) {
         initComponents();
-        this.pack();
         this.setLocationRelativeTo(null);
+        this.v1 = v1;
+        this.v2 = v2;
+        v1.setVisible(false);
+        v2.setVisible(false);
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,20 +43,51 @@ public class RegistroClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Volver = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        Nombre1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        Apellido = new javax.swing.JTextField();
+        buscar = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Volver.setText("VOLVER");
-        Volver.addActionListener(new java.awt.event.ActionListener() {
+        volver.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        volver.setText("Volver");
+        volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverActionPerformed(evt);
+                volverActionPerformed(evt);
             }
         });
-        getContentPane().add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, -1, -1));
+        getContentPane().add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 70, 20));
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel3.setText("Nombre del cliente: ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+        Nombre1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Nombre1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 380, 40));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel2.setText("Apellido del cliente: ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        getContentPane().add(Apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 380, 40));
+
+        buscar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        buscar.setText("Buscar cliente");
+        buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 200, 70));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pngtree-light-blue-background-gradient-abstract-background-halo-image_758338.jpg"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 400));
@@ -49,11 +95,29 @@ public class RegistroClientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-        Functions f = new Functions();
-        this.dispose();
-        f.Volver();
-    }//GEN-LAST:event_VolverActionPerformed
+    private void Nombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nombre1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nombre1ActionPerformed
+
+    private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
+        String nombre = Nombre1.getText();
+        String apellido = Apellido.getText();
+
+        Cliente cliente = new Cliente(nombre, apellido);
+        int clave = table.isInHashIndexN(cliente);
+
+        if(clave != -1){
+            JOptionPane.showMessageDialog(null, "El cliente " + nombre + " " + apellido + " se eencuentra en la habitacion " + clave);
+        }else{
+            JOptionPane.showMessageDialog(null,"El cliente no se encuentra alojado en el hotel");
+        }
+
+    }//GEN-LAST:event_buscarActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        this.setVisible(false);
+        Menu ventana1 = new Menu(v2);
+        ventana1.setVisible(true);    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,13 +152,18 @@ public class RegistroClientes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistroClientes().setVisible(true);
+                new RegistroClientes(v1,v2).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Apellido;
     private javax.swing.JLabel Fondo;
-    private javax.swing.JButton Volver;
+    private javax.swing.JTextField Nombre1;
+    private javax.swing.JButton buscar;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }
